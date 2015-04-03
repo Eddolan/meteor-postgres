@@ -16,8 +16,9 @@ Npm.depends({
 
 Package.onUse(function(api) {
   api.versionsFrom('1.1');
-  api.addFiles('postgres.js');
-  api.export('Postgres')
+  api.addFiles('postgres.js', 'server');
+  api.export('Postgres', 'server')
+  pg = Npm.require('pg');
 });
 
 Package.onTest(function(api) {
